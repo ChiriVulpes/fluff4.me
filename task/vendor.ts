@@ -110,5 +110,6 @@ export default Task('vendor', async () => {
 	for (const module of NO_OP_MODULES)
 		js += `define("${module}",[],()=>{})\n`
 
+	await fs.mkdir('docs/js', { recursive: true })
 	await fs.writeFile('docs/js/vendor.js', js)
 })
