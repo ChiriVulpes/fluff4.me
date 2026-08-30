@@ -310,6 +310,7 @@ const ChapterEditForm = Object.assign(
 							},
 							body: {
 								...content.state.value,
+								...(content.state.value.visibility === 'Patreon' ? {} : { tier_ids: undefined }),
 								work: { status: statusDropdown.selection.value },
 							},
 						})
